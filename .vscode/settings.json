@@ -1,0 +1,18 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "cSpell.words": [
+        "Abreviado",
+        "Clientes",
+        "conjuge",
+        "Contatos",
+        "coyote",
+        "Enderecos",
+        "Generation",
+        "Icms",
+        "Razao",
+        "strategy"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "cSpell.language": "en,pt"
+}
