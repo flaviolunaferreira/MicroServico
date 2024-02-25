@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import the.coyote.clientes.dto.clientes.ClientesResponseDTO;
+import the.coyote.core.clientes.dtos.ClientesResponseDTO;
 
 @Service
 public interface ClientesService {

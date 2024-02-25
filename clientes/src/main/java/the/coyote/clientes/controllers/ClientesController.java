@@ -8,18 +8,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import lombok.AllArgsConstructor;
-import the.coyote.clientes.dto.clientes.ClientesResponseDTO;
 import the.coyote.clientes.service.ClientesService;
+import the.coyote.core.clientes.dtos.ClientesResponseDTO;
 
 @RestController
 @RequestMapping("/api/v1/clientes")
-@AllArgsConstructor
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class ClientesController {
-    
-    @Autowired
+
     private final ClientesService clientesService;
 
-    
     @GetMapping()
     public ResponseEntity<List<ClientesResponseDTO>> getAllClientes(@RequestParam int page, int size) {
         try {

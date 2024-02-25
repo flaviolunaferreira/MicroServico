@@ -3,24 +3,22 @@ package the.coyote.clientes.service.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import the.coyote.clientes.dto.clientes.ClientesResponseDTO;
-import the.coyote.clientes.entities.Clientes;
-import the.coyote.clientes.repositories.ClientesRepository;
+import the.coyote.core.clientes.dtos.ClientesResponseDTO;
+import the.coyote.core.clientes.repositories.ClientesRepository;
 import the.coyote.clientes.service.ClientesService;
+import the.coyote.core.clientes.entities.clientes.Clientes;
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class ClientesServiceImpl implements ClientesService {
 
     private final ClientesRepository clientesRepository;
-
-    public ClientesServiceImpl(ClientesRepository clientesRepository) {
-        this.clientesRepository = clientesRepository;
-    }
 
     @Override
     public List<ClientesResponseDTO> getAllClientes(int page, int size) {
