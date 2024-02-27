@@ -29,6 +29,6 @@ public class BasicEntity {
     private String lastModifiedBy;
 
     @LastModifiedDate
-    private LocalDateTime lastModefiedDate;
+    private LocalDateTime lastModifiedDate;
     
 }
