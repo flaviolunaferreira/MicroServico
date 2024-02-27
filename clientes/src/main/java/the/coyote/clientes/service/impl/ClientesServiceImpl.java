@@ -10,9 +10,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import the.coyote.core.clientes.dtos.ClientesResponseDTO;
+import the.coyote.core.clientes.entities.Clientes;
 import the.coyote.core.clientes.repositories.ClientesRepository;
 import the.coyote.clientes.service.ClientesService;
-import the.coyote.core.clientes.entities.clientes.Clientes;
 
 @Service
 @AllArgsConstructor(onConstructor = @__(@Autowired))

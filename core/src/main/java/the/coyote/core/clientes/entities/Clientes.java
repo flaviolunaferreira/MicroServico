@@ -1,4 +1,4 @@
-package the.coyote.core.clientes.entities.clientes;
+package the.coyote.core.clientes.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -7,27 +7,19 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import the.coyote.core.BasicEntity;
 import the.coyote.core.enumaradores.EstadoCivil;
 import the.coyote.core.enumaradores.Sexo;
 
+@Data
 @Entity
-@Getter
-@Setter
 @NoArgsConstructor
-@AllArgsConstructor
-public class Clientes {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@EqualsAndHashCode(callSuper=true)
+public class Clientes extends BasicEntity {
 
     private String nomeRazao;
 
@@ -64,13 +56,5 @@ public class Clientes {
     private Integer indPrestServConstCivil;
 
     private Boolean regraFiscalDeSaidaAtivada;
-
-    private Integer idResponsavelCadastro;
-
-    private LocalDateTime dataDeCadastro;
-
-    private Integer idResponsávelUltimaAlteracao;
-
-    private LocalDateTime dataUltimaAlteracao;
 
 }

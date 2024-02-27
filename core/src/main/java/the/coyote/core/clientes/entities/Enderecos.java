@@ -1,28 +1,20 @@
-package the.coyote.core.clientes.entities.clientes;
+package the.coyote.core.clientes.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import the.coyote.core.BasicEntity;
 import the.coyote.core.enumaradores.TipoDeEndereco;
 
 
-@Setter
-@Getter
+@Data
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
-public class Enderecos {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idEndereco;
+@EqualsAndHashCode(callSuper=true)
+public class Enderecos extends BasicEntity {
 
     private TipoDeEndereco tipoDeEndereco;
 

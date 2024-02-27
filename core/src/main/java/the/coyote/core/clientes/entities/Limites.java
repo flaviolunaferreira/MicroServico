@@ -1,30 +1,22 @@
-package the.coyote.core.clientes.entities.clientes;
+package the.coyote.core.clientes.entities;
 
 import java.math.BigDecimal;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import the.coyote.core.BasicEntity;
 import the.coyote.core.enumaradores.StatusCliente;
 import the.coyote.core.enumaradores.TipoDeLimite;
 
-@Getter
-@Setter
+@Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
-public class Limites {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idLimite;
+@EqualsAndHashCode(callSuper=true)
+public class Limites extends BasicEntity {
 
     private TipoDeLimite tipoLimiteSaldo;
 

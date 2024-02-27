@@ -1,4 +1,4 @@
-package the.coyote.core.clientes.entities.clientes;
+package the.coyote.core.clientes.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

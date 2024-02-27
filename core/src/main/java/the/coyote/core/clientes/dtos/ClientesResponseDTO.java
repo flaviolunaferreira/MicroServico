@@ -3,19 +3,19 @@ package the.coyote.core.clientes.dtos;
 import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import the.coyote.core.clientes.entities.clientes.Clientes;
+import the.coyote.core.clientes.entities.Clientes;
 import the.coyote.core.enumaradores.Sexo;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class ClientesResponseDTO {
 
-    private Integer id;
+    private Long id;
 
     private String nomeRazao;
 
