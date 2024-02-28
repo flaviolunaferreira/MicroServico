@@ -1,4 +1,4 @@
-package the.coyote.core.clientes.entities;
+package the.coyote.core.compartilhados;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import the.coyote.core.BasicEntity;
+import the.coyote.core.clientes.entities.Clientes;
 import the.coyote.core.enumaradores.TipoDeEndereco;
 
 

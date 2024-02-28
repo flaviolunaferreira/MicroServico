@@ -15,11 +15,7 @@ public class ClientesResponseDTO {
 
     private String nomeRazao;
 
-    private String cpfCnpj;
-
     private String nome;
-
-    private String inscricaoEstadual;
 
     private Sexo sexo;
 
@@ -29,8 +25,6 @@ public class ClientesResponseDTO {
         this.setId(cli.getId());
         this.setNome(cli.getNome());
         this.setNomeRazao(cli.getNomeRazao());
-        this.setCpfCnpj(cli.getCpfCnpj());
-        this.setInscricaoEstadual(cli.getInscricaoEstadual());
         this.setSexo(cli.getSexo());
         this.setDataNascimento(cli.getDataNascimento());
 
