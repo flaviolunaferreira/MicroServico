@@ -16,7 +16,6 @@
 
 	<modules>
 		<module>clientes</module>
-		<module>core</module>
 	</modules>
 
 	<dependencies>

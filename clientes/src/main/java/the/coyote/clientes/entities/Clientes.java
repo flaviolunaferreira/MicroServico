@@ -1,29 +1,26 @@
-package the.coyote.core.clientes.entities;
+package the.coyote.clientes.entities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import the.coyote.core.BasicEntity;
-import the.coyote.core.compartilhados.Contatos;
-import the.coyote.core.compartilhados.Documentos;
-import the.coyote.core.compartilhados.Enderecos;
-import the.coyote.core.enumaradores.EstadoCivil;
-import the.coyote.core.enumaradores.Sexo;
-import the.coyote.core.enumaradores.TipoDePessoa;
+import the.coyote.clientes.enumaradores.EstadoCivil;
+import the.coyote.clientes.enumaradores.Sexo;
+import the.coyote.clientes.enumaradores.TipoDePessoa;
 
 @Data
 @Entity
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 public class Clientes extends BasicEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false)
     private TipoDePessoa tipoDePessoa;
@@ -60,6 +57,7 @@ public class Clientes extends BasicEntity {
 
     private Boolean regraFiscalDeSaidaAtivada;
 
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Documentos> documentos;
 
 }

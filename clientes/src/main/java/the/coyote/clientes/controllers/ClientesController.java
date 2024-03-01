@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import lombok.AllArgsConstructor;
 import the.coyote.clientes.service.ClientesService;
-import the.coyote.core.clientes.dtos.ClientesResponseDTO;
+import the.coyote.clientes.dtos.ClientesRequestDTO;
+import the.coyote.clientes.dtos.ClientesResponseDTO;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api/v1/clientes")
@@ -19,7 +23,7 @@ public class ClientesController {
     private final ClientesService clientesService;
 
     @GetMapping()
-    public ResponseEntity<List<ClientesResponseDTO>> getAllClientes(@RequestParam int page, int size) {
+    public ResponseEntity<List<ClientesResponseDTO>> getAll(@RequestParam int page, int size) {
         try {
             return ResponseEntity.ok().body(clientesService.getAllClientes(page, size));
         } catch (Exception e) {
@@ -27,43 +31,40 @@ public class ClientesController {
         }
     }
     
-    // @GetMapping("/{id}")
-    // public ResponseEntity<?> getOne(@PathVariable Integer id) {
-    //     try {
-    //         //TODO Implement Your Logic To Get Data From Service Layer Or Directly From Repository Layer
-    //         return new ResponseEntity<>("GetOne Result", HttpStatus.OK);
-    //     } catch (Exception e) {
-    //         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @GetMapping("/id/{id}")
+    public ResponseEntity<ClientesResponseDTO> getOne(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok().body(clientesService.getOne(id));
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+      
+    @PostMapping()
+    public ResponseEntity<ClientesResponseDTO> create(@RequestBody ClientesRequestDTO clientesRequestDTO) {
+        try {
+            return ResponseEntity.ok().body(clientesService.create(clientesRequestDTO));
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
     
-    // @PostMapping()
-    // public ResponseEntity<?> create(@RequestBody Dto dto) {
-    //     try {
-    //         //TODO Implement Your Logic To Save Data And Return Result Through ResponseEntity
-    //         return new ResponseEntity<>("Create Result", HttpStatus.OK);
-    //     } catch (Exception e) {
-    //         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @PutMapping("/id/{id}")
+    public ResponseEntity<?> update(@RequestBody ClientesRequestDTO clientesRequestDTO, @PathVariable Long id) {
+        try {
+            return ResponseEntity.ok().body(clientesService.update(clientesRequestDTO, id));
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
     
-    // @PutMapping()
-    // public ResponseEntity<?> update(@RequestBody Dto dto) {
-    //     try {
-    //         //TODO Implement Your Logic To Update Data And Return Result Through ResponseEntity
-    //         return new ResponseEntity<>("Update Result", HttpStatus.OK);
-    //     } catch (Exception e) {
-    //         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
-    
-    // @DeleteMapping("/{id}")
-    // public ResponseEntity<?> destroy(@PathVariable Integer id) {
-    //     try {
-    //         //TODO Implement Your Logic To Destroy Data And Return Result Through ResponseEntity
-    //         return new ResponseEntity<>("Destroy Result", HttpStatus.OK);
-    //     } catch (Exception e) {
-    //         return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    //     }
-    // }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> destroy(@PathVariable Long id) {
+        try {
+            clientesService.destroy(id);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

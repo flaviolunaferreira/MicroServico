@@ -1,4 +1,4 @@
-package the.coyote.core.clientes.dtos;
+package the.coyote.clientes.dtos;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,12 +9,12 @@ import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import the.coyote.core.compartilhados.Contatos;
-import the.coyote.core.compartilhados.Documentos;
-import the.coyote.core.compartilhados.Enderecos;
-import the.coyote.core.enumaradores.EstadoCivil;
-import the.coyote.core.enumaradores.Sexo;
-import the.coyote.core.enumaradores.TipoDePessoa;
+import the.coyote.clientes.entities.Contatos;
+import the.coyote.clientes.entities.Documentos;
+import the.coyote.clientes.entities.Enderecos;
+import the.coyote.clientes.enumaradores.EstadoCivil;
+import the.coyote.clientes.enumaradores.Sexo;
+import the.coyote.clientes.enumaradores.TipoDePessoa;
 
 @Data
 @NoArgsConstructor

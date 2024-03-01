@@ -1,18 +1,18 @@
-package the.coyote.core.compartilhados;
+package the.coyote.clientes.entities;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import the.coyote.core.BasicEntity;
-import the.coyote.clientes.entities.Clientes;
-import the.coyote.core.enumaradores.TipoDeEndereco;
+import the.coyote.clientes.enumaradores.TipoDeEndereco;
 
-
-
+@Entity
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 public class Enderecos extends BasicEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private TipoDeEndereco tipoDeEndereco;
 
@@ -31,7 +31,7 @@ public class Enderecos extends BasicEntity {
     private String complemento;
 
     @ManyToOne
-    @JoinColumn(name = "idCliente")
+    @JoinColumn(name = "cliente_id")
     private Clientes cliente;
 
 }

@@ -1,22 +1,23 @@
-package the.coyote.core.clientes.entities;
+package the.coyote.clientes.entities;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import the.coyote.core.BasicEntity;
-import the.coyote.core.enumaradores.StatusCliente;
-import the.coyote.core.enumaradores.TipoDeLimite;
+import the.coyote.clientes.enumaradores.StatusCliente;
+import the.coyote.clientes.enumaradores.TipoDeLimite;
 
 @Data
 @Entity
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 public class Limites extends BasicEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private TipoDeLimite tipoLimiteSaldo;
 
@@ -29,7 +30,6 @@ public class Limites extends BasicEntity {
     private String observacao;
 
     @ManyToOne
-    @JoinColumn(name = "idAnalise")
     private AnaliseCredito analiseCredito;
 
 }

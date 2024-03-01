@@ -1,4 +1,4 @@
-package the.coyote.core.exceptions;
+package the.coyote.clientes.exceptions;
 
 public class ValorDuplicado extends RuntimeException{
 

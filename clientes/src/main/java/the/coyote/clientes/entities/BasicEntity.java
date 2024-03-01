@@ -1,25 +1,15 @@
-package the.coyote.core;
+package the.coyote.clientes.entities;
 
-import java.time.LocalDateTime;
-
-import jakarta.persistence.Entity;
+import lombok.Data;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Data;
+import java.time.LocalDateTime;
 
 @Data
-@Entity
 public abstract class BasicEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @CreatedBy
     private String createdBy;

@@ -1,11 +1,10 @@
-package the.coyote.core.exceptions;
+package the.coyote.clientes.exceptions;
 
+import jakarta.servlet.ServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
-import jakarta.servlet.ServletRequest;
 
 
 @ControllerAdvice
@@ -13,14 +12,14 @@ public class ExceptionHadlerController {
 
 	@ExceptionHandler(NaoEncontrado.class)
 	public ResponseEntity<StandardError> notFoundException(NaoEncontrado e, ServletRequest request) {
-		StandardError error = new StandardError (
+		StandardError error = new StandardError(
 				System.currentTimeMillis(),
 				HttpStatus.NOT_FOUND.value(),
 				e.getMessage()
 		);
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
 	}
-	
+
 	@ExceptionHandler(ViolacaoDeIntegridade.class)
 	public ResponseEntity<StandardError> integratyViolationException(ViolacaoDeIntegridade e, ServletRequest request) {
 		StandardError error = new StandardError(
@@ -33,7 +32,7 @@ public class ExceptionHadlerController {
 
 	@ExceptionHandler(ValorDuplicado.class)
 	public ResponseEntity<StandardError> valorDuplicado(ValorDuplicado e, ServletRequest request) {
-		StandardError error = new StandardError (
+		StandardError error = new StandardError(
 				System.currentTimeMillis(),
 				HttpStatus.NOT_ACCEPTABLE.value(),
 				e.getMessage()
@@ -43,7 +42,7 @@ public class ExceptionHadlerController {
 
 	@ExceptionHandler(ViolacaoDeRegra.class)
 	public ResponseEntity<StandardError> violacaoDeRegrra(ValorDuplicado e, ServletRequest request) {
-		StandardError error = new StandardError (
+		StandardError error = new StandardError(
 				System.currentTimeMillis(),
 				HttpStatus.NOT_ACCEPTABLE.value(),
 

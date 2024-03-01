@@ -1,4 +1,4 @@
-package the.coyote.core.exceptions;
+package the.coyote.clientes.exceptions;
 
 public class ViolacaoDeRegra extends RuntimeException{
     private static final long serialVersionUID = 1L;

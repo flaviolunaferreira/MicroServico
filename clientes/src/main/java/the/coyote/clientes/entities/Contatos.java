@@ -1,23 +1,24 @@
-package the.coyote.core.compartilhados;
+package the.coyote.clientes.entities;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import the.coyote.core.BasicEntity;
-import the.coyote.clientes.entities.Clientes;
-import the.coyote.core.enumaradores.TipoDeContato;
+import the.coyote.clientes.enumaradores.TipoDeContato;
 
+@Entity
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 public class Contatos extends BasicEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private TipoDeContato tipoContato;
     
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "idCliente")
     private Clientes cliente;
 }
 

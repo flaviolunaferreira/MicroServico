@@ -1,21 +1,26 @@
-package the.coyote.core.compartilhados;
+package the.coyote.clientes.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import lombok.Data;
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import the.coyote.core.BasicEntity;
-import the.coyote.core.enumaradores.TipoDeDocumento;
+import the.coyote.clientes.enumaradores.TipoDeDocumento;
 
+@Entity
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 public class Documentos extends BasicEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     private TipoDeDocumento tipo;
     private String campo;
     private String valor;
+
+    @ManyToOne
+    private Clientes cliente;
+
 
 }

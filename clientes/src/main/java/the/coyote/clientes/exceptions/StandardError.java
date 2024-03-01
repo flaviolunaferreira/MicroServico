@@ -1,4 +1,4 @@
-package the.coyote.core.exceptions;
+package the.coyote.clientes.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

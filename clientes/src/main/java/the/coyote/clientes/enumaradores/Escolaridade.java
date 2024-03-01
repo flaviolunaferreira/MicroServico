@@ -1,4 +1,4 @@
-package the.coyote.core.enumaradores;
+package the.coyote.clientes.enumaradores;
 
 public enum Escolaridade {
     
