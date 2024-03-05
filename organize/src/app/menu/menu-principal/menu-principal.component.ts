@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TituloComponent } from "../../componentes/titulo/titulo.component";
-import { RouterOutlet } from '@angular/router';
-import { MenuItem , MessageService} from 'primeng/api';
+import { RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,13 +9,13 @@ import { CommonModule } from '@angular/common';
     templateUrl: './menu-principal.component.html',
     styleUrl: './menu-principal.component.scss',
     imports: [TituloComponent, RouterOutlet, CommonModule],
-    providers: [MessageService]
+    providers: []
 })
 export class MenuPrincipalComponent implements OnInit {
 
   items: any | undefined;
 
-  constructor(private messageService: MessageService) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.items = [
@@ -43,6 +42,7 @@ export class MenuPrincipalComponent implements OnInit {
   }
 
   clientes() {
-    alert('clientes')
+    this.router.navigateByUrl('clientes');
+
   }
 }

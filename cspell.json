@@ -6,16 +6,21 @@
     "words": [
         "BOLETO",
         "Ctps",
+        "devkit",
         "dtos",
         "Empregaticio",
         "Empregaticios",
+        "fileupload",
         "Hadler",
         "integraty",
+        "prerender",
+        "primeng",
         "RASTREAMENTO",
         "Registro",
         "Regrra",
         "secao",
-        "Servlet"
+        "Servlet",
+        "variavless"
     ],
     "ignoreWords": [],
     "import": [],

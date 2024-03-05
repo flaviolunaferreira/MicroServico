@@ -7,6 +7,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 NgModule({
   imports: [
@@ -16,5 +17,9 @@ NgModule({
 })
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration()]
+  providers: [
+    provideRouter(routes),
+    provideClientHydration(),
+    provideHttpClient(withFetch())
+  ]
 };

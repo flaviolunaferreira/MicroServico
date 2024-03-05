@@ -11,6 +11,6 @@ export class ClientesService {
   constructor(private http: HttpClient) { }
 
   getAllClientes(page: number, size: number): Observable<ClientesResponseDTO[]> {
-    return this.http.get<ClientesResponseDTO[]>(`/api/v1/clientes?page=${page}&size=${size}`);
+    return this.http.get<ClientesResponseDTO[]>(`http://localhost:8081/api/v1/clientes?page=0&size=100`);
   }
 }

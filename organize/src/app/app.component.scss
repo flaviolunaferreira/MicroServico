@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
 
-  app-menu-principal {
+  .menu-principal {
     display: flex;
     flex-direction: column;
     background-color: $link-color;
@@ -19,11 +19,12 @@
     height: 100%;
     border: 3px groove rgb(214, 182, 182);
   }
-  app-principal {
+  .area-trabalho {
     background: $cor-fundo-principal;
     color: $secondary-color;
     width: 84%;
     height: 100%;
+    border-radius: 10px;
   }
 }
 

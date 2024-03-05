@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet, Router } from '@angular/router';
 import { PrincipalComponent } from "./pages/principal/principal.component";
 import { MenuPrincipalComponent } from "./menu/menu-principal/menu-principal.component";
 import { TituloComponent } from "./componentes/titulo/titulo.component";
@@ -13,4 +13,5 @@ import { TituloComponent } from "./componentes/titulo/titulo.component";
 })
 export class AppComponent {
   title = 'organize';
+
 }
