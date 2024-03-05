@@ -1,0 +1,11 @@
+<div class="main">
+  <app-titulo></app-titulo>
+    <div class="opcoes">
+      <ul>
+        <li *ngFor="let item of items" (click)='item.acao()'>
+          {{ item.label }}
+        </li>
+      </ul>
+
+    </div>
+</div>
