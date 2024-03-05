@@ -7,6 +7,7 @@
   flex-direction: row;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 
   .menu-principal {
     display: flex;
@@ -19,6 +20,7 @@
     height: 100%;
     border: 3px groove rgb(214, 182, 182);
   }
+
   .area-trabalho {
     background: $cor-fundo-principal;
     color: $secondary-color;

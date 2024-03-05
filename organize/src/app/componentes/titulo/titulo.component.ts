@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-titulo',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './titulo.component.scss'
 })
 export class TituloComponent {
+
+  constructor(private router: Router) {}
+
+retornarPrincipal() {
+  this.router.navigateByUrl('inicio');
+}
 
 }
