@@ -30,13 +30,17 @@ public class ClientesResponseDTO {
 
     public ClientesResponseDTO(Clientes cli) {
         this.setId(cli.getId());
-        this.setTipoDePessoa(TipoDePessoa.valueOf(getTipoDePessoa().getDescricao()));
+        if (cli.getTipoDePessoa() != null) {
+            this.setTipoDePessoa(TipoDePessoa.valueOf(cli.getTipoDePessoa().getDescricao()));
+        }
         this.setNomeRazao(cli.getNomeRazao());
         this.setNome(cli.getNome());
         this.setConjuge(cli.getConjuge());
         this.setPreCadastroCliente(cli.getPreCadastroCliente());
         this.setAtualizaPessoa(cli.getAtualizaPessoa());
-        this.setSexo(Sexo.valueOf(cli.getSexo().getDescricao()));
+        if (cli.getSexo() != null) {
+            this.setSexo(Sexo.valueOf(cli.getSexo().getDescricao()));
+        }
         this.setEstadoCivil(cli.getEstadoCivil());
         this.setDataNascimento(cli.getDataNascimento());
         this.setIdLoja(cli.getIdLoja());

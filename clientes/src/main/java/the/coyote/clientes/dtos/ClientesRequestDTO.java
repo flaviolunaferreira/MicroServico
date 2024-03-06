@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,14 +18,11 @@ import the.coyote.clientes.enumaradores.TipoDePessoa;
 @Data
 @NoArgsConstructor
 public class ClientesRequestDTO {
-    
-   @Column(nullable = false)
+
     private TipoDePessoa tipoDePessoa;
 
-    @Column(nullable = false)
     private String nomeRazao;
 
-    @Column(nullable = false)
     private String nome;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)

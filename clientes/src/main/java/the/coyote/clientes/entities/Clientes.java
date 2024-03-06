@@ -22,7 +22,6 @@ public class Clientes extends BasicEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private TipoDePessoa tipoDePessoa;
 
     @Column(nullable = false)

@@ -23,7 +23,7 @@ public class ClientesController {
     private final ClientesService clientesService;
 
     @GetMapping()
-    public ResponseEntity<List<ClientesResponseDTO>> getAll(@RequestParam int page, int size) {
+    public ResponseEntity<List<ClientesResponseDTO>> getAll(@RequestParam int page,@RequestParam int size) {
         try {
             return ResponseEntity.ok().body(clientesService.getAllClientes(page, size));
         } catch (Exception e) {

@@ -31,8 +31,9 @@ public class ClientesServiceImpl implements ClientesService {
         PageRequest pagina = PageRequest.of(page, size);
 
         Page<Clientes> lista = clientesRepository.findAll(pagina);
-
-        return lista.stream().map(ClientesResponseDTO::new).collect(Collectors.toList());
+        List<ClientesResponseDTO> result = lista.stream().map(ClientesResponseDTO::new).collect(Collectors.toList());
+        System.out.println(result);
+        return result;
     }
 
     @Override
