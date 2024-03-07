@@ -1,33 +1,36 @@
 @import "../variavless.scss";
 
+
+
 .inicio {
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
+  height: 99.8vh;
   cursor: pointer;
   background-color: $fundo;
 
+
   .menu-principal {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: $menu;
-    color: $txtoDoMenu;
+    color: $textoDoMenu;
     padding: 1px;
     border-radius: 10px;
     width: 200px;
-    height: 100vh;
-    border: 3px groove rgb(214, 182, 182);
+    height: 99.8vh;
+    border: 3px groove $borda;
   }
 
   .area-trabalho {
     margin: 2px;
     background-color: $areaDeTrabalho;
-    color: $txtoDoMenu;
+    color: $textoDoMenu;
     width: calc(100% - 200px);
-    height: 100vh;
+    height: 99.8vh;
     border-radius: 10px;
   }
 }

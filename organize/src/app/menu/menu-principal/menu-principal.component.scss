@@ -1,8 +1,14 @@
 @import './../../../variavless.scss';
 
 .main  {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 191px;
   height: 100%;
+  app-titulo {
+    width: 100%;
+
+  }
   .opcoes {
     width: 100%;
     padding: 1rem;
