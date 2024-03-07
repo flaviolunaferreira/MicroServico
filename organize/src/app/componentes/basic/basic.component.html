@@ -1,0 +1,47 @@
+<div class="opcoes">
+  <toolbar color="default">
+    <div class="left">
+      <button class="incluir">Incluir</button>
+      <button class="apagar">Apagar</button>
+    </div>
+    <div class="right">
+      <button class="imprimir">Imprimir</button>
+      <button class="importar">Importar</button>
+    </div>
+  </toolbar>
+</div>
+
+<div class="areaDeTrabalho">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let coluna of colunas"
+          [style.width]="coluna.width"
+          [style.height]="coluna.height"
+          [style.text-align]="coluna.position">
+            {{ coluna.header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td
+          *ngFor="let coluna of colunas"
+          [style.width]="coluna.width"
+          [style.height]="coluna.height"
+          [style.height]="coluna.height"
+        >
+          <ng-container *ngIf="coluna.type === 'button'">
+            <button (click)="handleButtonClick(item)" class="btn">{{ coluna.label }}</button>
+          </ng-container>
+          <ng-container *ngIf="coluna.type === 'checkbox'">
+            <input type="checkbox" [checked]="item[coluna.field]" disabled>
+          </ng-container>
+          <ng-container *ngIf="coluna.type !== 'button' && coluna.type !== 'checkbox'">
+            {{ item[coluna.field] }}
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
