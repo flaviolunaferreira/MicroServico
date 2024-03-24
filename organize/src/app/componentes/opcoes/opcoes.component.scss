@@ -1,0 +1,71 @@
+@import '../../../variavless.scss';
+
+.opcoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2px;
+  padding: 0.7rem;
+  width: 100%;
+  height: 100px;
+  background-color: $menu;
+  border: 5px groove $borda;
+  border-radius: 10px;
+  box-sizing: border-box;
+  .titulo {
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    h1 {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .selecao {
+    flex-direction: column;
+    width: 50%;
+    .btns {
+      flex-direction: row;
+      button {
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 2px;
+        width: 19.1%;
+        height: 2.2rem;
+        margin-left: 5px;
+        border-radius: 5px;
+        background-color: rgb(141, 216, 141);
+        padding-right: 20px; /* Ajuste conforme necessário */
+        background-repeat: no-repeat;
+        background-position: left center; /* Posicionamento do ícone */
+      }
+      #incluir {
+        background-image: url('../../../assets/icones/Adicionar.ico');
+      }
+      #imprimir {
+        background-color: $cor-fundo-principal;
+        background-image: url('../../../assets/icones/imprimir.ico');
+      }
+
+      #exportar {
+        background-color: $cor-menu;
+        background-image: url('../../../assets/icones/exportar.ico');
+      }
+
+      #atualizar {
+        background-color: $textoDoMenu;
+      }
+
+      #voltar {
+        background-color: $cor-destaque;
+      }
+    }
+    input {
+      margin: 0.4rem;
+      padding: 0.3rem;
+      width: 98%;
+      height: 2rem;
+    }
+  }
+}

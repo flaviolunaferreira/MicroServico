@@ -1,0 +1,18 @@
+table {
+  margin: 1rem;
+  th{
+    font-weight: 800;
+    font-size: larger;
+  }
+  td, th {
+    padding-left: 10px;
+  }
+ }
+
+.par {
+  background-color: rgb(46, 6, 6);
+}
+
+.impar {
+  background-color: rgb(6, 6, 39);
+}

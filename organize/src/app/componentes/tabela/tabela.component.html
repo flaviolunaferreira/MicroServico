@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let coluna of colunas"
+        [style.width]="coluna.largura"
+        [style.text-align]="coluna.posicao"
+        [style.height]="coluna.altura">
+        {{ coluna.titulo }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of dados; let i = index" [ngClass]= "i % 2 === 0 ? 'par' : 'impar'">
+      <td *ngFor="let coluna of colunas"
+      [style.width]="coluna.largura"
+      [style.text-align]="coluna.posicao"
+      [style.height]="coluna.altura">
+        {{item[coluna.campo]}}
+      </td>
+    </tr>
+  </tbody>
+</table>

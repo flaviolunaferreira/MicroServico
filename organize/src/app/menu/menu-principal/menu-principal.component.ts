@@ -28,21 +28,39 @@ export class MenuPrincipalComponent implements OnInit {
         },
         {
             label: 'Produtos',
-            icon: 'pi pi-fw pi-trash'
+            icon: 'pi pi-fw pi-trash',
+            acao: () => {
+              this.produtos();
+            }
         },
         {
           label: 'Fornecedores',
           icon: 'pi pi-fw pi-plus',
+          acao: () => {
+            this.fornecedores();
+          }
       },
       {
           label: 'Funcionários',
-          icon: 'pi pi-fw pi-trash'
+          icon: 'pi pi-fw pi-trash',
+          acao: () => {
+            this.funcionarios();
+          }
       }
     ];
   }
 
   clientes() {
     this.router.navigateByUrl('clientes');
+  }
 
+  fornecedores() {
+    this.router.navigateByUrl('fornecedores');
+  }
+  funcionarios() {
+    this.router.navigateByUrl('funcionarios');
+  }
+  produtos() {
+    this.router.navigateByUrl('produtos');
   }
 }

@@ -12,8 +12,8 @@ export class TituloComponent {
 
   constructor(private router: Router) {}
 
-retornarPrincipal() {
-  this.router.navigateByUrl('inicio');
-}
+  retornarPrincipal() {
+    this.router.navigateByUrl('inicio');
+  }
 
 }

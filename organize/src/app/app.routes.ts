@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
-import { PrincipalComponent } from './pages/principal/principal.component';
-import { MenuPrincipalComponent } from './menu/menu-principal/menu-principal.component';
-import { ClientesComponent } from './pages/clientes/clientes.component';
-import { AppComponent } from './app.component';
+import { PrincipalComponent } from './paginas/principal/principal.component';
+import { ClientesComponent } from './paginas/clientes/clientes.component';
+import { FornecedoresComponent } from './paginas/fornecedores/fornecedores.component';
+import { FuncionariosComponent } from './paginas/funcionarios/funcionarios.component';
+import { ProdutosComponent } from './paginas/produtos/produtos.component';
 
 
 export const routes: Routes = [
@@ -19,5 +20,8 @@ export const routes: Routes = [
       { path: 'principal', component: PrincipalComponent},
     ]
   },
-  { path: 'clientes', component: ClientesComponent }
+  { path: 'clientes', component: ClientesComponent },
+  { path: 'fornecedores', component: FornecedoresComponent },
+  { path: 'funcionarios', component: FuncionariosComponent },
+  { path: 'produtos', component: ProdutosComponent }
 ];

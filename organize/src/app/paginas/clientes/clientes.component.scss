@@ -1,0 +1,9 @@
+.container-fluid {
+  position: relative;
+  min-height: 100vh;
+  resumo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}

@@ -3,21 +3,23 @@
 .main  {
   display: flex;
   flex-direction: column;
-  width: 191px;
+  width: 200px;
   height: 100%;
+  border-radius: 10px;
   app-titulo {
     width: 100%;
 
   }
   .opcoes {
-    width: 100%;
+    width: 96%;
+    margin-top: 1rem;
     padding: 1rem;
     color: $cor-texto-principal;
     ul {
-      width: 100%;
+      width: 90%;
       height: 100%;
       li {
-        width: 100%;
+        width: 90%;
         height: 3rem;
         text-decoration: none;
         cursor: pointer;
