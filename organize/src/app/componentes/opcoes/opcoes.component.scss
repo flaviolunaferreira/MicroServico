@@ -55,15 +55,16 @@
 
       #atualizar {
         background-color: $textoDoMenu;
+        background-image: url('../../../assets/icones/atualizar.ico');
       }
 
       #voltar {
         background-color: $cor-destaque;
+        background-image: url('../../../assets/icones/voltar.ico');
       }
     }
     input {
       margin: 0.4rem;
-      padding: 0.3rem;
       width: 98%;
       height: 2rem;
     }

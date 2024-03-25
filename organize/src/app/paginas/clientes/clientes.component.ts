@@ -32,11 +32,21 @@ export class ClientesComponent implements OnInit{
       {campo: 'nome',       titulo: 'Nome.',  posicao: 'left',   icone: 'null', tipo: 'null', largura: '300px',  altura: '2rem'},
       {campo: 'nomeRazao',  titulo: 'Razão',  posicao: 'left',   icone: 'null', tipo: 'null', largura: '300px',  altura: '2rem'},
       {campo: 'sexo',       titulo: 'Sexo',   posicao: 'center', icone: 'null', tipo: 'null', largura: '80px',   altura: '2rem'},
+      {campo: 'nome',       titulo: 'Nome.',  posicao: 'left',   icone: 'null', tipo: 'null', largura: '300px',  altura: '2rem'},
+      {campo: 'nomeRazao',  titulo: 'Razão',  posicao: 'left',   icone: 'null', tipo: 'null', largura: '300px',  altura: '2rem'},
+      {campo: 'sexo',       titulo: 'Sexo',   posicao: 'center', icone: 'null', tipo: 'null', largura: '80px',   altura: '2rem'},
       {campo: 'tipoPessoa', titulo: 'Pessoa', posicao: 'center', icone: 'null', tipo: 'null', largura: '80px',   altura: '2rem'}
     ]
 
   }
 
+  onBtnVisualizar(item: any) {
+    console.log('Botão marcar acionado')
+  }
+
+  onBtnOrdenar(Item: any) {
+    console.log('Botão ordenar selecionado')
+  }
 
   buscarClientes() {
     this.clienteService.getAllClientes(0,100).subscribe((data) => {

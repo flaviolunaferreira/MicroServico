@@ -1,6 +1,11 @@
 <div class="container-fluid">
   <opcoes titulo="Cadastro de Clientes"></opcoes>
-  <tabela [dados]="clientes" [colunas]="colunas" />
+  <tabela
+    [dados]="clientes"
+    [colunas]="colunas"
+    (visualizar)="onBtnVisualizar($event)"
+    (ordenar)="onBtnOrdenar($event)"
+  />
   <resumo></resumo>
 </div>
 

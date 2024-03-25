@@ -1,22 +1,33 @@
-<table>
-  <thead>
-    <tr>
-      <th *ngFor="let coluna of colunas"
+<div class="container-fluid">
+
+  <table>
+    <thead>
+      <tr>
+        <th class="fixed-columns" style='width: 200px'></th>
+        <th class="fixed-columns" style='width: 200px'></th>
+        <th *ngFor="let coluna of colunas"
+          [style.width]="coluna.largura"
+          [style.text-align]="coluna.posicao"
+          [style.height]="coluna.altura">
+          {{ coluna.titulo }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dados; let i = index" [ngClass]= "i % 2 === 0 ? 'par' : 'impar'">
+        <td>
+          <button (click)="visualizarClick(item)">ver</button>
+        </td>
+        <td>
+          <button (click)="ordenarClick(item)">Ordenar</button>
+        </td>
+        <td *ngFor="let coluna of colunas"
         [style.width]="coluna.largura"
         [style.text-align]="coluna.posicao"
         [style.height]="coluna.altura">
-        {{ coluna.titulo }}
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of dados; let i = index" [ngClass]= "i % 2 === 0 ? 'par' : 'impar'">
-      <td *ngFor="let coluna of colunas"
-      [style.width]="coluna.largura"
-      [style.text-align]="coluna.posicao"
-      [style.height]="coluna.altura">
-        {{item[coluna.campo]}}
-      </td>
-    </tr>
-  </tbody>
-</table>
+          {{item[coluna.campo]}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
